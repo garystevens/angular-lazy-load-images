@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    </head>
+    <body ng-app="demo">
+
+        <div ng-controller="testController as vm">
+
+            <div ng-repeat="post in vm.posts" class="post">
+
+                <div class="post__media">
+
+                    <image-loader-directive
+                        img-class="loader"
+                        img-url="{{ post.url }}"
+                        img-width="300"
+                        img-height="300"
+                        img-alt="A progressively loaded image">
+                    </image-loader-directive>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="js/app.js"></script>
+        <script src="js/angular-lazy-load-images.js"></script>
+        <script src="js/test.controller.js"></script>
+    </body>
+</html>
